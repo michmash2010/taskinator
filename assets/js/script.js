@@ -3,12 +3,14 @@
 // var buttonEl = document.querySelector("#save-task");
 // console.log(buttonEl);
 
-var buttonEl = document.querySelector("#save-task");
+var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
 
 
 var createTaskHandler = function() {
+    // prevents the browser from doing it's default behavior of submitting the form and reloading page
+    event.preventDefault();
      // create a new task item
     var listItemEl = document.createElement("li");
     // style the new task item
@@ -19,4 +21,4 @@ var createTaskHandler = function() {
     tasksToDoEl.appendChild(listItemEl);
 };
 
-buttonEl.addEventListener("click", createTaskHandler);
+formEl.addEventListener("submit", createTaskHandler);
